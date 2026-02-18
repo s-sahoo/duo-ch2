@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="The Diffusion Duality, Chapter II">
+  <meta property="og:title" content="DUO, Chapter II"/>
+  <meta property="og:description" content="Uniform-state diffusion language models surpass masked diffusion language models via improved samplers."/>
+  <meta property="og:url" content="https://s-sahoo.com/duo-ch2"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/duo_schematic.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="The Diffusion Duality, Chapter II: Psi-Samplers and Efficient Curriculum">
+  <meta name="twitter:description" content="Uniform-state diffusion language models surpass masked diffusion language models via improved samplers.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/duo_schematic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="The Diffusion Duality Duo Diffusion Language Models Psi-Samplers Efficient Curriculum">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Duality - ch 2</title>
+  <link rel="icon" type="image/x-icon" href="static/images/ganeshafavicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">The Diffusion Duality, Chapter II:<br> <span class="mathjax">\( \Psi \)</span>-Samplers and Efficient Curriculum</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://jdeschena.github.io" target="_blank">Justin Deschenaux<sup>1</sup></a>,&nbsp;</span>
+              <span class="author-block">
+                <a href="https://www.caglar.ai" target="_blank">Caglar Gulcehre<sup>1</sup></a>,&nbsp;</span>
+              <span class="author-block">
+                <a href="https://s-sahoo.github.io" target="_blank">Subham Sekhar Sahoo<sup>2</sup></a></span>
+                </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                      <sup>1</sup>EPFL, Lausanne &nbsp;&nbsp;&nbsp;
+                      <sup>2</sup>Cornell Tech, NY 
+                      <br> <b >ICLR 2026</b>
+                      <!-- <br> <b >[The blog-post will be ready by April 19, 2025.]</b> -->
+                    </span>
+                    
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+
+                        <!-- ArXiv abstract Link -->
+                        <span class="link-block">
+                          <a href="https://openreview.net/forum?id=RSIoYWIzaP" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                            </span>
+                            <span>arXiv</span>
+                          </a>
+                        </span>
+
+                        <!-- YouTube Link -->
+                        <!-- <span class="link-block">
+                          <a href="https://youtu.be/FCO-nnqHOqQ?si=B-ZRjODznjE1NxkO" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fab fa-youtube" style="color: #cb422a;"></i>
+                            </span>
+                            <span>YouTube</span>
+                          </a>
+                        </span> -->
+
+                        <!-- Github link -->
+                        <span class="link-block">
+                          <a href="https://github.com/s-sahoo/duo" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fab fa-github"></i>
+                          </span>
+                          <span>Code</span>
+                          </a>
+                        </span>
+
+                        <!-- Google Colab Link -->
+                        <span class="link-block">
+                          <a href="https://colab.research.google.com/drive/1uFSzrfG0KXhGcohRIfWIM2Y7V9Q7cQNA?usp=sharing" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <img src="https://colab.research.google.com/img/colab_favicon.ico" alt="Colab Logo" style="width: 18px; height: 18px;">
+                            </span>
+                            <span>Colab</span>
+                          </a>
+                        </span>
+
+                        <!-- HuggingFace link -->
+                        <span class="link-block">
+                          <a href="https://huggingface.co/collections/s-sahoo/duo-67f9ff8fde919224e5fbd875" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <p>&#129303;</p>
+                            </span>
+                            <span>HuggingFace</span>
+                          </a>
+                        </span>
+
+                        <p style="text-align: center; margin-top: 20px; font-size: 24px;">
+                          <span> <b>Uniform-state beats Masked diffusion</b> on text and image generation!</span>
+                        </p>
+                        </a>
+                      </span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div style="text-align: center;">
+        <img src="static/images/cover.png" alt="MY ALT TEXT" style="width: 100%; height: auto;" id="fig:text-image-generation" />
+      </div>
+      <h4 class="subtitle has-text-centered">
+        An illustration of <span class="mathjax">\( \Psi \)</span>-Samplers which consists of
+        a <span style="color: rgb(74, 147, 250);">Predictor</span> step and
+        a <span style="color: rgb(224, 71, 15);">Corrector</span> step [@Justin: TODO: Add the equation at the bottom and reference it here]. 
+        With this, Duo (Uniform-state diffusion) outperforms MDLM (Masked diffusion) on text and image generation.
+        </h4>
+      <img src="static/images/duo_2.gif" width="100%" alt="A descriptive text for the GIF" >
+      <img src="static/images/mdlm_2.gif" width="100%" alt="A descriptive text for the GIF" >
+      <img src="static/images/gpt_2.gif" width="100%" alt="A descriptive text for the GIF" >
+      <!-- <iframe width="100%" height="500"
+      src="https://www.youtube.com/embed/FCO-nnqHOqQ?si=B-ZRjODznjE1NxkO"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+      </iframe>
+      <h4 class="subtitle has-text-centered">
+        An in-depth tutorial on this paper by Subham, Justin, and Zhihan.
+      </h4> -->
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+
+<!-- <section class="section" id="DiffusionModels">
+  <div class="container is-max-desktop">
+  <div class="content is-medium">
+    <p style="font-family: 'Georgia', 'Times New Roman', serif;
+          font-size: 1.15rem;
+          line-height: 1.75;
+          color: #333;
+          font-style: italic;
+          letter-spacing: 0.3px;
+          text-align: justify;
+          padding-left: 2rem; /* adds white space at start */
+          padding-right: 2rem; /* adds white space at start */
+          position: relative;">
+    <span style="font-size: 4rem; line-height: 0; color: #888; position: absolute; left: 0rem; top: 1.5rem;">“</span>An eternal theme in mathematics is that discreteness emerges from underlying continuity.
+      From quantum mechanics, where the quantized energy states of electrons arise as solutions
+      to continuous wave equations,
+      to the binary logic of digital circuits,
+      fundamentally driven by smooth analog currents, discreteness has repeatedly and naturally
+      emerged from an underlying continuum. Our work continues this tradition by demonstrating
+      that a discrete diffusion process is, in fact, an emergent phenomenon of an underlying
+      continuous Gaussian diffusion process.
+      <span style="font-size: 4rem; line-height: 0; color: #888; position: absolute; right: 0.5em; bottom: 0rem;">”</span>
+    </p>
+  </div>
+  </div>
+
+</section> -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Innovations</h2>
+        <ol>
+          <li>
+            @justin: TODO
+          </li>
+          <li>
+            @justin: TODO
+          </li>
+          <li>
+            @justin: TODO
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section" id="Experiments">
+  <div class="container is-max-desktop">
+     <div class="content is-medium">
+        <h2 class="title">Experiments</h2>
+        <h4> Curriculum Learning</h4>
+           <div style="text-align: center;">
+              <img src="static/images/curriculum.png" alt="MY ALT TEXT" style="width: 100%; height: auto;" id="fig:curriculum"/>
+              <figcaption style="margin-top:0.5em; font-size:0.8em; color:#444;">
+                <b>Figure 1:</b> @Justin: TODO</b>.
+              </figcaption>
+              <span> @justin: TODO: Provide an intuitive explanation 
+                (a) what is curriculum and how it works in general (from the Background sec) 
+                (b) Issues with it 
+                (c) how we fix it <a href="#fig:curriculum" style="color: rgb(46, 106, 237);">Figure 1</a></span>
+           </div>
+           <br>
+        <h4>Text and Image Generation</h4>
+        <span> @justin: TODO: Provide an intuitive explanation of the sampler 
+          (Section 3, last paragraph).
+          Add equations. <a href="#fig:text-image-generation" style="color: rgb(46, 106, 237);">Figure 1</a></span>
+     </div>
+  </div>
+</section>
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+
+    <div style="position: relative;">
+      <button onclick="copyBibTeX()" style="position: absolute; top: 10px; right: 10px; z-index: 1;">
+        Copy
+      </button>
+      <pre><code id="bibtex-code">@inproceedings{
+  deschenaux2026the,
+  title={The Diffusion Duality, Chapter {II}: \${\textbackslash}Psi\$-Samplers and Efficient Curriculum},
+  author={Justin Deschenaux and Caglar Gulcehre and Subham Sekhar Sahoo},
+  booktitle={The Fourteenth International Conference on Learning Representations},
+  year={2026},
+  url={https://openreview.net/forum?id=RSIoYWIzaP}
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<script>
+  function copyBibTeX() {
+    const code = document.getElementById('bibtex-code').innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      alert("BibTeX copied to clipboard!");
+    });
+  }
+</script>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+</html>
