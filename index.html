@@ -2,27 +2,20 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="The Diffusion Duality, Chapter II">
+  <meta name="description" content="The Diffusion Duality, Chapter II: Psi-Samplers and Efficient Curriculum">
   <meta property="og:title" content="DUO, Chapter II"/>
   <meta property="og:description" content="Uniform-state diffusion language models surpass masked diffusion language models via improved samplers."/>
   <meta property="og:url" content="https://s-sahoo.com/duo-ch2"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/images/duo_schematic.png" />
+  <meta property="og:image" content="static/images/webpage-cover.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-
   <meta name="twitter:title" content="The Diffusion Duality, Chapter II: Psi-Samplers and Efficient Curriculum">
   <meta name="twitter:description" content="Uniform-state diffusion language models surpass masked diffusion language models via improved samplers.">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/duo_schematic.png">
+  <meta name="twitter:image" content="static/images/webpage-cover.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="The Diffusion Duality Duo Diffusion Language Models Psi-Samplers Efficient Curriculum">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
   <title>Duality - ch 2</title>
   <link rel="icon" type="image/x-icon" href="static/images/ganeshafavicon.ico">
@@ -57,9 +50,8 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">The Diffusion Duality, Chapter II:<br> <span class="mathjax">\( \Psi \)</span>-Samplers and Efficient Curriculum</h1>
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://jdeschena.github.io" target="_blank">Justin Deschenaux<sup>1</sup></a>,&nbsp;</span>
+                <a href="https://jdeschena.com" target="_blank">Justin Deschenaux<sup>1</sup></a>,&nbsp;</span>
               <span class="author-block">
                 <a href="https://www.caglar.ai" target="_blank">Caglar Gulcehre<sup>1</sup></a>,&nbsp;</span>
               <span class="author-block">
@@ -69,16 +61,13 @@
                   <div class="is-size-5 publication-authors">
                     <span class="author-block">
                       <sup>1</sup>EPFL, Lausanne &nbsp;&nbsp;&nbsp;
-                      <sup>2</sup>Cornell Tech, NY 
-                      <br> <b >ICLR 2026</b>
-                      <!-- <br> <b >[The blog-post will be ready by April 19, 2025.]</b> -->
+                      <sup>2</sup>Cornell Tech, NY
+                      <br> <b>ICLR 2026</b>
                     </span>
-                    
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-
 
                         <!-- ArXiv abstract Link -->
                         <span class="link-block">
@@ -90,17 +79,6 @@
                             <span>arXiv</span>
                           </a>
                         </span>
-
-                        <!-- YouTube Link -->
-                        <!-- <span class="link-block">
-                          <a href="https://youtu.be/FCO-nnqHOqQ?si=B-ZRjODznjE1NxkO" target="_blank"
-                          class="external-link button is-normal is-rounded is-dark">
-                          <span class="icon">
-                            <i class="fab fa-youtube" style="color: #cb422a;"></i>
-                            </span>
-                            <span>YouTube</span>
-                          </a>
-                        </span> -->
 
                         <!-- Github link -->
                         <span class="link-block">
@@ -135,124 +113,101 @@
                         </span>
 
                         <p style="text-align: center; margin-top: 20px; font-size: 24px;">
-                          <span> <b>Uniform-state beats Masked diffusion</b> on text and image generation!</span>
+                          <span><b>Uniform-state diffusion is competitive with Masked diffusion</b> on text and image generation!</span>
                         </p>
-                        </a>
-                      </span>
-                </a>
-              </span>
-            </div>
+                    </div>
+                  </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Teaser: Cover + GIFs stacked vertically -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="padding-bottom: 1rem;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <img src="static/images/cover.png" alt="Psi-Samplers schematic: Predictor step followed by Corrector step for discrete diffusion" style="width: 100%; height: auto;" />
+      </div>
+      <div style="max-width: 700px; margin: 0 auto;">
+        <div style="margin-bottom: 1.5rem; text-align: center;">
+          <p style="font-weight: bold; margin-bottom: 0.5rem;">Duo<sup>++</sup> (Ours)</p>
+          <img src="static/images/duo_2.gif" width="100%" alt="Duo++ generation animation showing parallel token refinement">
+        </div>
+        <div style="margin-bottom: 1.5rem; text-align: center;">
+          <p style="font-weight: bold; margin-bottom: 0.5rem;">MDLM (Masked Diffusion)</p>
+          <img src="static/images/mdlm_2.gif" width="100%" alt="MDLM generation animation showing masked token unmasking">
+        </div>
+        <div style="text-align: center;">
+          <p style="font-weight: bold; margin-bottom: 0.5rem;">GPT-2 (Autoregressive)</p>
+          <img src="static/images/gpt_2.gif" width="100%" alt="GPT-2 autoregressive generation animation">
         </div>
       </div>
     </div>
   </div>
 </section>
+<!-- End teaser -->
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div style="text-align: center;">
-        <img src="static/images/cover.png" alt="MY ALT TEXT" style="width: 100%; height: auto;" id="fig:text-image-generation" />
-      </div>
-      <h4 class="subtitle has-text-centered">
-        An illustration of <span class="mathjax">\( \Psi \)</span>-Samplers which consists of
-        a <span style="color: rgb(74, 147, 250);">Predictor</span> step and
-        a <span style="color: rgb(224, 71, 15);">Corrector</span> step [@Justin: TODO: Add the equation at the bottom and reference it here]. 
-        With this, Duo (Uniform-state diffusion) outperforms MDLM (Masked diffusion) on text and image generation.
-        </h4>
-      <img src="static/images/duo_2.gif" width="100%" alt="A descriptive text for the GIF" >
-      <img src="static/images/mdlm_2.gif" width="100%" alt="A descriptive text for the GIF" >
-      <img src="static/images/gpt_2.gif" width="100%" alt="A descriptive text for the GIF" >
-      <!-- <iframe width="100%" height="500"
-      src="https://www.youtube.com/embed/FCO-nnqHOqQ?si=B-ZRjODznjE1NxkO"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-      </iframe>
-      <h4 class="subtitle has-text-centered">
-        An in-depth tutorial on this paper by Subham, Justin, and Zhihan.
-      </h4> -->
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-
-
-<!-- <section class="section" id="DiffusionModels">
-  <div class="container is-max-desktop">
-  <div class="content is-medium">
-    <p style="font-family: 'Georgia', 'Times New Roman', serif;
-          font-size: 1.15rem;
-          line-height: 1.75;
-          color: #333;
-          font-style: italic;
-          letter-spacing: 0.3px;
-          text-align: justify;
-          padding-left: 2rem; /* adds white space at start */
-          padding-right: 2rem; /* adds white space at start */
-          position: relative;">
-    <span style="font-size: 4rem; line-height: 0; color: #888; position: absolute; left: 0rem; top: 1.5rem;">“</span>An eternal theme in mathematics is that discreteness emerges from underlying continuity.
-      From quantum mechanics, where the quantized energy states of electrons arise as solutions
-      to continuous wave equations,
-      to the binary logic of digital circuits,
-      fundamentally driven by smooth analog currents, discreteness has repeatedly and naturally
-      emerged from an underlying continuum. Our work continues this tradition by demonstrating
-      that a discrete diffusion process is, in fact, an emergent phenomenon of an underlying
-      continuous Gaussian diffusion process.
-      <span style="font-size: 4rem; line-height: 0; color: #888; position: absolute; right: 0.5em; bottom: 0rem;">”</span>
-    </p>
-  </div>
-  </div>
-
-</section> -->
-
-
-<!-- Paper abstract -->
+<!-- Key Contributions -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Key Innovations</h2>
-        <ol>
-          <li>
-            @justin: TODO
-          </li>
-          <li>
-            @justin: TODO
-          </li>
-          <li>
-            @justin: TODO
-          </li>
-        </ol>
-      </div>
+    <div class="content is-medium">
+      <h2 class="title">Key Contributions</h2>
+      <ol>
+        <li>
+          <b><span class="mathjax">\(\Psi\)</span>-Samplers:</b> A family of Predictor-Corrector samplers for discrete diffusion that generalize prior methods and apply to any noise process. With these, we outperform MDLM on both text and image generation.
+        </li>
+        <li style="margin-top: 0.5rem;">
+          <b>Inference-time scaling:</b> Unlike ancestral sampling which plateaus, <span class="mathjax">\(\Psi\)</span>-samplers continue to improve with more sampling steps.
+        </li>
+        <li style="margin-top: 0.5rem;">
+          <b>Efficient Curriculum:</b> <b>33% less memory</b> and <b>25% faster training</b> by exploiting softmax sparsity: only <span class="mathjax">\(k\)</span> embeddings needed (as few as 2).
+        </li>
+      </ol>
+      <p style="font-size: 0.95em; color: #555;">
+        Concurrently, <a href="http://s-sahoo.com/scaling-dllms/" target="_blank" style="color: hsl(204, 86%, 53%);">Sahoo et al. (2026)</a> show that <a href="https://s-sahoo.com/duo/" target="_blank" style="color: hsl(204, 86%, 53%);">Duo</a> surpasses autoregressive models at the 1.7B scale on GSM8K.
+      </p>
     </div>
   </div>
 </section>
-<!-- End paper abstract -->
 
-<section class="section" id="Experiments">
+
+<!-- Psi-Samplers -->
+<section class="section" id="PsiSamplers">
+  <div class="container is-max-desktop">
+    <div class="content is-medium">
+      <h2 class="title"><span class="mathjax">\(\Psi\)</span>-Samplers</h2>
+
+      <p>
+        Standard discrete diffusion uses ancestral sampling: at each step, tokens are updated using the reverse posterior. For masked diffusion, once a token is unmasked it can never be corrected. For uniform-state diffusion, quality plateaus in the high NFE regime. We introduce <span class="mathjax">\(\Psi\)</span>-posteriors, a superposition of a <span style="color: rgb(74, 147, 250); font-weight: bold;">Predictor</span> (reverse posterior) and a <span style="color: rgb(224, 71, 15); font-weight: bold;">Corrector</span> (forward process), that preserve the diffusion marginals while enabling error correction. As shown at the top, <span class="mathjax">\(\Psi\)</span>-samplers consistently improve with more sampling steps (unlike ancestral sampling which plateaus), and Duo<sup>++</sup> outperforms MDLM on both text (OpenWebText) and image (CIFAR-10) generation.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Efficient Curriculum -->
+<section class="section hero is-light" id="Curriculum">
   <div class="container is-max-desktop">
      <div class="content is-medium">
-        <h2 class="title">Experiments</h2>
-        <h4> Curriculum Learning</h4>
-           <div style="text-align: center;">
-              <img src="static/images/curriculum.png" alt="MY ALT TEXT" style="width: 100%; height: auto;" id="fig:curriculum"/>
-              <figcaption style="margin-top:0.5em; font-size:0.8em; color:#444;">
-                <b>Figure 1:</b> @Justin: TODO</b>.
-              </figcaption>
-              <span> @justin: TODO: Provide an intuitive explanation 
-                (a) what is curriculum and how it works in general (from the Background sec) 
-                (b) Issues with it 
-                (c) how we fix it <a href="#fig:curriculum" style="color: rgb(46, 106, 237);">Figure 1</a></span>
-           </div>
-           <br>
-        <h4>Text and Image Generation</h4>
-        <span> @justin: TODO: Provide an intuitive explanation of the sampler 
-          (Section 3, last paragraph).
-          Add equations. <a href="#fig:text-image-generation" style="color: rgb(46, 106, 237);">Figure 1</a></span>
+        <h2 class="title">Efficient Curriculum</h2>
+
+        <div style="text-align: center;">
+           <img src="static/images/curriculum.png" alt="Efficient curriculum diagram" style="width: 100%; height: auto;"/>
+           <figcaption style="margin-top:0.5em; font-size:0.85em; color:#444;">
+             <b>(Top)</b> <a href="https://s-sahoo.com/duo/" target="_blank" style="color: hsl(204, 86%, 53%);">Duo</a> uses linear combinations of all <span class="mathjax">\(K\)</span> embeddings.
+             <b>(Bottom)</b> Duo<sup>++</sup> exploits softmax sparsity, simulating only the top-<span class="mathjax">\(k\)</span> entries.
+           </figcaption>
+        </div>
+
+        <p style="margin-top: 1em;">
+          Duo<sup>++</sup> exploits the sparsity of the low-temperature softmax used by <a href="https://s-sahoo.com/duo/" target="_blank" style="color: hsl(204, 86%, 53%);">Duo</a>. Indeed, at low temperature, almost all mass concentrates on a few entries. By simulating only the top-<span class="mathjax">\(k\)</span> entries using order statistics (<span class="mathjax">\(k\)</span> as small as 2), we reduce peak memory by <b>33%</b> (94 GiB &rarr; 63 GiB) and end-to-end training time by <b>25%</b>, while matching the perplexity and downstream accuracy of <a href="https://s-sahoo.com/duo/" target="_blank" style="color: hsl(204, 86%, 53%);">Duo</a>.
+        </p>
+
      </div>
   </div>
 </section>
@@ -269,7 +224,7 @@
       </button>
       <pre><code id="bibtex-code">@inproceedings{
   deschenaux2026the,
-  title={The Diffusion Duality, Chapter {II}: \${\textbackslash}Psi\$-Samplers and Efficient Curriculum},
+  title={The Diffusion Duality, Chapter {II}: ${\textbackslash}Psi$-Samplers and Efficient Curriculum},
   author={Justin Deschenaux and Caglar Gulcehre and Subham Sekhar Sahoo},
   booktitle={The Fourteenth International Conference on Learning Representations},
   year={2026},
@@ -297,8 +252,8 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
@@ -307,12 +262,6 @@
     </div>
   </div>
 </footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
 
   </body>
 </html>
