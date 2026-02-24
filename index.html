@@ -129,7 +129,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body" style="padding-bottom: 1rem;">
       <div style="text-align: center; margin-bottom: 2rem;">
-        <img src="static/images/Webpage-cover.png" alt="Psi-Samplers schematic: Predictor step followed by Corrector step for discrete diffusion" style="width: 100%; height: auto;" />
+        <img id="fig:cover" src="static/images/Webpage-cover.png" alt="Psi-Samplers schematic: Predictor step followed by Corrector step for discrete diffusion" style="width: 100%; height: auto;" />
       </div>
       <div style="max-width: 700px; margin: 0 auto;">
         <div style="margin-bottom: 1.5rem; text-align: center;">
@@ -168,7 +168,9 @@
         </li>
       </ol>
       <p style="font-size: 0.95em; color: #555;">
-        Concurrently, <a href="http://s-sahoo.com/scaling-dllms/" target="_blank" style="color: hsl(204, 86%, 53%);">Sahoo et al. (2026)</a> show that <a href="https://s-sahoo.com/duo/" target="_blank" style="color: hsl(204, 86%, 53%);">Duo</a> surpasses autoregressive models at the 1.7B scale on GSM8K.
+        Concurrently, <a href="http://s-sahoo.github.io/scaling-dllms/" target="_blank" style="color: hsl(204, 86%, 53%);">Sahoo et al. (2026)</a> 
+        show that <a href="https://s-sahoo.com/duo/" target="_blank" style="color: hsl(204, 86%, 53%);">Duo</a> 
+        surpasses autoregressive models at the 1.7B scale on maths and reasoning task (GSM8K).
       </p>
     </div>
   </div>
@@ -184,14 +186,20 @@
       <p>
         Standard discrete diffusion uses ancestral sampling: at each step, 
         tokens are updated using the reverse posterior. 
-        For masked diffusion, once a token is unmasked it can never be corrected. 
-        For uniform-state diffusion, quality plateaus in the high NFE regime. 
+        <ul>
+          <li>For Masked diffusion, once a token is unmasked it can never be corrected.</li>
+          <li>For Uniform-state diffusion, quality plateaus in the high NFE regime.</li>
+        </ul>
+      </p>
+      <p>
         We introduce <span class="mathjax">\(\Psi\)</span>-posteriors, 
         a superposition of a <span style="color: rgb(74, 147, 250); font-weight: bold;">Predictor</span> 
         (reverse posterior) and 
         a <span style="color: rgb(224, 71, 15); font-weight: bold;">Corrector</span> (forward process), 
         that preserve the diffusion marginals while enabling error correction. 
-        As shown at the top, <span class="mathjax">\(\Psi\)</span>-samplers 
+      </p>
+      <p> 
+        As shown in <a href="#fig:cover" style="color: rgb(46, 106, 237);">Fig. 1</a>, <span class="mathjax">\(\Psi\)</span>-samplers 
         consistently improve with more sampling steps (unlike ancestral sampling which plateaus), 
         and Duo<sup>++</sup> outperforms MDLM on both text (OpenWebText) and 
         image (CIFAR-10) generation.
