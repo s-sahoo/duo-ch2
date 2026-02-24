@@ -6,13 +6,13 @@
   <meta property="og:title" content="DUO, Chapter II"/>
   <meta property="og:description" content="Uniform-state diffusion language models surpass masked diffusion language models via improved samplers."/>
   <meta property="og:url" content="https://s-sahoo.com/duo-ch2"/>
-  <meta property="og:image" content="static/images/webpage-cover.png" />
+  <meta property="og:image" content="static/images/Webpage-cover.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
   <meta name="twitter:title" content="The Diffusion Duality, Chapter II: Psi-Samplers and Efficient Curriculum">
   <meta name="twitter:description" content="Uniform-state diffusion language models surpass masked diffusion language models via improved samplers.">
-  <meta name="twitter:image" content="static/images/webpage-cover.png">
+  <meta name="twitter:image" content="static/images/Webpage-cover.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="keywords" content="The Diffusion Duality Duo Diffusion Language Models Psi-Samplers Efficient Curriculum">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -113,7 +113,7 @@
                         </span>
 
                         <p style="text-align: center; margin-top: 20px; font-size: 24px;">
-                          <span><b>Uniform-state diffusion is competitive with Masked diffusion</b> on text and image generation!</span>
+                          <span><b>Uniform-state diffusion beats Masked diffusion</b> on text and image generation!</span>
                         </p>
                     </div>
                   </div>
@@ -133,15 +133,15 @@
       </div>
       <div style="max-width: 700px; margin: 0 auto;">
         <div style="margin-bottom: 1.5rem; text-align: center;">
-          <p style="font-weight: bold; margin-bottom: 0.5rem;">Duo<sup>++</sup> (Ours)</p>
+          <!-- <p style="font-weight: bold; margin-bottom: 0.5rem;">Duo<sup>++</sup> (Ours)</p> -->
           <img src="static/images/duo_2.gif" width="100%" alt="Duo++ generation animation showing parallel token refinement">
         </div>
         <div style="margin-bottom: 1.5rem; text-align: center;">
-          <p style="font-weight: bold; margin-bottom: 0.5rem;">MDLM (Masked Diffusion)</p>
+          <!-- <p style="font-weight: bold; margin-bottom: 0.5rem;">MDLM (Masked Diffusion)</p> -->
           <img src="static/images/mdlm_2.gif" width="100%" alt="MDLM generation animation showing masked token unmasking">
         </div>
         <div style="text-align: center;">
-          <p style="font-weight: bold; margin-bottom: 0.5rem;">GPT-2 (Autoregressive)</p>
+          <!-- <p style="font-weight: bold; margin-bottom: 0.5rem;">GPT-2 (Autoregressive)</p> -->
           <img src="static/images/gpt_2.gif" width="100%" alt="GPT-2 autoregressive generation animation">
         </div>
       </div>
@@ -205,7 +205,13 @@
         </div>
 
         <p style="margin-top: 1em;">
-          Duo<sup>++</sup> exploits the sparsity of the low-temperature softmax used by <a href="https://s-sahoo.com/duo/" target="_blank" style="color: hsl(204, 86%, 53%);">Duo</a>. Indeed, at low temperature, almost all mass concentrates on a few entries. By simulating only the top-<span class="mathjax">\(k\)</span> entries using order statistics (<span class="mathjax">\(k\)</span> as small as 2), we reduce peak memory by <b>33%</b> (94 GiB &rarr; 63 GiB) and end-to-end training time by <b>25%</b>, while matching the perplexity and downstream accuracy of <a href="https://s-sahoo.com/duo/" target="_blank" style="color: hsl(204, 86%, 53%);">Duo</a>.
+          Duo<sup>++</sup> exploits the sparsity of the low-temperature softmax used by 
+          <a href="https://s-sahoo.com/duo/" target="_blank" style="color: hsl(204, 86%, 53%);">Duo</a>. 
+          By simulating only the top-<span class="mathjax">\(k\)</span> 
+          entries using order statistics (<span class="mathjax">\(k\)</span> as small as 2), 
+          we reduce peak memory by <b>33%</b> and end-to-end training time by <b>25%</b>, 
+          while matching the perplexity and downstream accuracy of 
+          <a href="https://s-sahoo.com/duo/" target="_blank" style="color: hsl(204, 86%, 53%);">Duo</a>.
         </p>
 
      </div>
