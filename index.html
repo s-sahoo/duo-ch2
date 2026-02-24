@@ -182,7 +182,19 @@
       <h2 class="title"><span class="mathjax">\(\Psi\)</span>-Samplers</h2>
 
       <p>
-        Standard discrete diffusion uses ancestral sampling: at each step, tokens are updated using the reverse posterior. For masked diffusion, once a token is unmasked it can never be corrected. For uniform-state diffusion, quality plateaus in the high NFE regime. We introduce <span class="mathjax">\(\Psi\)</span>-posteriors, a superposition of a <span style="color: rgb(74, 147, 250); font-weight: bold;">Predictor</span> (reverse posterior) and a <span style="color: rgb(224, 71, 15); font-weight: bold;">Corrector</span> (forward process), that preserve the diffusion marginals while enabling error correction. As shown at the top, <span class="mathjax">\(\Psi\)</span>-samplers consistently improve with more sampling steps (unlike ancestral sampling which plateaus), and Duo<sup>++</sup> outperforms MDLM on both text (OpenWebText) and image (CIFAR-10) generation.
+        Standard discrete diffusion uses ancestral sampling: at each step, 
+        tokens are updated using the reverse posterior. 
+        For masked diffusion, once a token is unmasked it can never be corrected. 
+        For uniform-state diffusion, quality plateaus in the high NFE regime. 
+        We introduce <span class="mathjax">\(\Psi\)</span>-posteriors, 
+        a superposition of a <span style="color: rgb(74, 147, 250); font-weight: bold;">Predictor</span> 
+        (reverse posterior) and 
+        a <span style="color: rgb(224, 71, 15); font-weight: bold;">Corrector</span> (forward process), 
+        that preserve the diffusion marginals while enabling error correction. 
+        As shown at the top, <span class="mathjax">\(\Psi\)</span>-samplers 
+        consistently improve with more sampling steps (unlike ancestral sampling which plateaus), 
+        and Duo<sup>++</sup> outperforms MDLM on both text (OpenWebText) and 
+        image (CIFAR-10) generation.
       </p>
 
     </div>
